@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longitundinal Analysis Presentation</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": { scale: 90 },
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js" integrity="sha512-7xTD1meeGGoAzwZKA0Z8YelV3qAvRltuwACWXpnxtneF7VAMztOTAi3t4laVSaE4Znq4LMPeGUIYWEvKEk5r3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js" integrity="sha512-S6SXKUZ11xkCoD/UuhdXG4B4iiCXng+xW2KCx0lgfQqmdqtjqGgm4WChdYIhO1F/CmH21vnkSUvPEgXNgDwkjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <header class = "head">
+        <div id = "h1">Mixed Effects Probability Model</div>
+        <div id = "h2"><a href="https://arjun10g.github.io/My-Web-Site/" target="_blank">By - Arjun Ghumman</a></div>
+      </header>
+    <div class="content">
+        <div class="sec1">
+            <div class="back b"></div>
+            <div class="work">
+                <h2>Linear Regression as a Probability Model</h2> 
+                <p>\[E(Y|X=x) = \beta_{0} + X\beta_{1} + \epsilon\]</p> 
+                <p>\[Y \sim X\beta + \mathcal{N}(0, \sigma)\]</p> 
+                <p>This notation represents that \( Y \) follows a multivariate gaussian distribution where the mean is given by \( X\beta \) and there is random variability modeled by the normal distribution \( N(0, \sigma) \).</p>
+                <p style = "font-size: 1rem;">\[
+                    Y = \begin{bmatrix}
+                    y_1 \\
+                    y_2 \\
+                    y_3 \\
+                    y_4 \\
+                    y_5 \\
+                    y_6 \\
+                    y_7 \\
+                    y_8 \\
+                    y_9 \\
+                    y_{10}
+                    \end{bmatrix} = \begin{bmatrix}
+                    1 & -0.97711742 \\
+                    1 & 1.99281818 \\
+                    1 & 0.13954855 \\
+                    1 & 1.50688027 \\
+                    1 & -0.83787869 \\
+                    1 & -0.11588208 \\
+                    1 & 0.02023445 \\
+                    1 & -0.79203557 \\
+                    1 & -0.23764875 \\
+                    1 & -1.47135449
+                    \end{bmatrix} \begin{bmatrix} 1 \\ 2 \end{bmatrix} + \begin{bmatrix}
+                    1.48265966 \\
+                    1.25347656 \\
+                    0.58685406 \\
+                    0.19234622 \\
+                    -0.54055290 \\
+                    -0.20303901 \\
+                    -0.55231654 \\
+                    0.01016256 \\
+                    -1.38243117 \\
+                    -1.06120950
+                    \end{bmatrix}
+                    \]</p>
+            </div>
+        </div>
+        <div class="sec2">
+            <div class="back b1"></div>
+            <div class="work">
+                <h2>Fixed vs Random Effects</h2>
+                <p>Mixed Effects Models just like linear models attempt to describe the relationship between a response variable and it's covariates. In mixed-effects models, there is at least one categorical covariate present. These categorical covariates are variables that represent categories or groups and can be characterized by experimental or observational "units" (Individuals). </p>
+                <p>Parameters associated with the levels of such categorical covariates are often referred to as 'effects'. </p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Fixed Effects</th>
+                            <th>Random Effects</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>If the set of possible levels of the covariate is fixed and reproducible we model the covariate using fixed-effects parameters.</td>
+                            <td>If the levels that we observed represent a random sample from the set of all possible levels we incorporate random effects in the model.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">'Fixed' and 'Random' are properties of levels of the categorical covariate.</td>
+                        </tr>
+                        <tr>
+                            <td>The levels of Birth Gender (Male and Female) are fixed; they do not change across different datasets.</td>
+                            <td>The students observed represent a sample from all possible students. Adding more data will increase distinct levels.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="sec3">
+            <div class="back b2"></div>
+            <div class="work">
+                <h2>Mixed Effects Model</h2>
+                <p>Mixed-effects models, or mixed models, combine fixed-effects parameters and random effects in statistical modeling. </p>
+                <p>Models with random effects always include at least one fixed-effects parameter. Therefore, any model with random effects is considered a mixed model.</p>
+                <p>The statistical model is characterized in terms of two random variables:</p>
+                <ul>
+                    <li>Response variable \( Y \) - a n dimensional response vector.</li>
+                    <li>Random effects \( B \) - a q dimensional vector of random effects.</li>
+                </ul>
+                <p>Upper-case script characters (e.g., B, Y) denote random variables, while the corresponding lower-case upright letters (e.g., b, y) represent specific values of these random variables.</p>
+                <p>Model is formulated by describing the conditional distribution of Y given B, and the unconditional distribution of B. </p>
+            </div>
+        </div>
+        <div class="sec4">
+            <div class="back b3"></div>
+            <div class="work">
+                <h2>Conditional Distribution of Response given Random Effects</h2>
+                <p>The conditional distribution of the response vector \( Y \) given the random effects \( B = b \) is assumed to follow a multivariate Gaussian with mean:</p>
+                <p>\[ E(Y \mid B=b) = X\beta + Zb \]</p>
+                <p>The conditional mean serves as the linear predictor which is a combination of fixed effects and random effects.</p>
+                <p>and variance:</p>
+                <p>\[ \text{Var}(Y \mid B=b) = \sigma^2 I \]</p>
+                <p></p>
+                <p>Therefore, the conditional distribution is given by:</p>
+                <p>\[ Y \mid B=b \sim \mathcal{N}(X\beta + Zb, \sigma^2 I) \]</p>
+            </div>
+        </div>
+        <div class="sec5">
+            <div class="back b4"></div>
+            <div class="work">
+                <h2>Unconditional Distribution of Random Effects</h2>
+                <p>The unconditional distribution of the random effects \( B \) is assumed to follow a multivariate Gaussian with mean:</p>
+                <p>\[ E(B) = 0 \]</p>
+                <p>and covariance matrix:</p>
+                <p>\[ \Sigma_{\theta} \]</p>
+                <p>Therefore, the unconditional distribution is given by:</p>
+                <p>\[ B \sim \mathcal{N}(0, \Sigma_{\theta}) \]</p>
+                <ul>
+                    <li>The mean vector is denoted by Zero, indicating that the expected value of each random effect is zero. This implies that, on average, the random effects have no systematic bias in any particular direction.</li>
+                    <li>The covariance matrix \(\Sigma_{\theta}\) describes the variability and relationships among the different random effects. The diagonal elements represent the variances of individual random effects, indicating how much each random effect varies on its own. The off-diagonal elements represent the covariances between pairs of random effects, indicating how much the random effects vary together.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="sec6">
+            <div class="back b5"></div>
+            <div class="work">
+                <h2>Determining the Conditional Mean of Y</h2>
+                <p>To estimate the expected value of the conditional mean, we need to find the linear predictor which is - </p>
+                <p>\[ E(Y \mid B=b) = X\beta + Zb \]</p>
+                <p class = "matrix">\(\begin{bmatrix}
+                    y_{1} \\
+                    y_{2} \\
+                    \vdots \\
+                    y_{10}
+                    \end{bmatrix}
+                    \) = \(\begin{bmatrix}
+                      1 & 0 \\
+                      1 & 1 \\
+                      1 & 2 \\
+                      1 & 3 \\
+                      1 & 4 \\
+                      1 & 5 \\
+                      1 & 6 \\
+                      1 & 7 \\
+                      1 & 8 \\
+                      1 & 9 \\
+                      1 & 0 \\
+                      1 & 1 \\
+                      1 & 2 \\
+                      1 & 3 \\
+                      1 & 4 \\
+                      1 & 5 \\
+                      1 & 6 \\
+                      1 & 7 \\
+                      1 & 8 \\
+                      1 & 9 \\
+                    \end{bmatrix}
+                    \) 
+                    \(\begin{bmatrix}
+                    224.62381 \\
+                    12.01324 \\
+                  \end{bmatrix}\)
+                  + \(\begin{bmatrix}
+                  1 & 1 & . & . \\
+                  1 & 1 & . & . \\
+                  1 & 2 & . & . \\
+                  1 & 3 & . & . \\
+                  1 & 4 & . & . \\
+                  1 & 5 & . & . \\
+                  1 & 6 & . & . \\
+                  1 & 7 & . & . \\
+                  1 & 8 & . & . \\
+                  1 & 9 & . & . \\
+                  . & . & 1 & . \\
+                  . & . & 1 & 1 \\
+                  . & . & 1 & 2 \\
+                  . & . & 1 & 3 \\
+                  . & . & 1 & 4 \\
+                  . & . & 1 & 5 \\
+                  . & . & 1 & 6 \\
+                  . & . & 1 & 7 \\
+                  . & . & 1 & 8 \\
+                  . & . & 1 & 9 \\
+                \end{bmatrix}\)\(\begin{bmatrix}
+                19.342543 \\
+                9.638882 \\
+                -19.342543 \\
+                -9.638882 \\
+              \end{bmatrix}\)
+                </p>
+            </div>
+        </div>
+        <div class="sec7">
+            <div class="back b6"></div>
+            <div class="work">
+                <h2>How are random effects determined?</h2>
+                <p>Random Effects that are outputed in software are often a function of a vector of spherical random effects and the the relative covariance factor.  </p>
+                <p>The <span class = "dark">spherical random effects \( U \)</span> follow a normal distribution \( U \sim \mathcal{N}(0, \sigma^2 I_q) \), determining \( B \) according to \( B = \Lambda_{\theta} U \).</p>
+                <p>Here, \( U \) is a \( q \)-dimensional vector, \( I_q \) is the \( q \times q \) identity matrix, and \( \Lambda_{\theta} \) represents the transformation of \( U \) using the matrix \( \Lambda \) and the variance component \( \theta \).</p>
+                <ol>
+                    <li>\(\theta\) is the variance component parameter generated by minimizing the PRSS.</li>
+                    <li>\( U \) are the spherical random effects that has two main properties (isotropic variability and independence of random effects), they are generated by minimizing the PRSS.</li>
+                    <li>\( \Lambda_{\theta} \) is the relative covariance factor generated using \(\theta\).</li>
+                    <li>The random effects typically outputed are a function of the relative covariance factor and the spherical random effects.</li>
+                    <li>The variance-covariance matrix of the random effects can be generated by - \( \Sigma_{\theta} = \sigma^2 \Lambda_{\theta} \Lambda_{\theta}^T \)</li>
+                </ol>
+            </div>
+        </div>
+        <div class="sec8">
+            <div class="back b7"></div>
+            <div class="work">
+                <video controls>
+                    <source src="anim_f.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+        <div class="sec9">
+            <div class="back b8"></div>
+            <div class="work">
+                <h2>Penalized Residual Sum of Squares</h2>
+                <p>\[ r^2(\theta, \beta, u) = \|y - X\beta - Z\Lambda_{\theta} u\|_2^2 + \|u\|_2^2 \]</p>
+                <p>The penalized residual sum of squares (PRSS) is an extension of ML that introduces a penalty term to the standard likelihood-based objective function.</p>
+                <p>The ML estimation for mixed-effects models involves finding values for
+                    \( \beta \), \( \theta \), and \( u \) that maximize the likelihood of the observed data.
+                    In the presence of a penalty term (as in PRSS), the optimization problem becomes a penalized maximum likelihood estimation.
+                    The objective is to find values that strike a balance between fitting the data well (minimizing the sum of squares)
+                    and penalizing complexity (controlling the size of the random effects).
+                  </p>
+                  <p>However, in the presence of random effects, ML tends to produce downward-biased estimates of the variance components. Hence, we typically prefer REML which adjusts the likelihood function to account for the fixed-effects parameters. By eliminating the fixed effects, REML provides unbiased estimates of the variance components</p>
+            </div>
+        </div>
+        <div class="sec10">
+            <div class="back b9"></div>
+            <div class="work">
+                <h2>Longitundinal Modelling App</h2>
+                <iframe src="https://arjun10.shinyapps.io/Longitudinal_Presentation/" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+      
+</body>
+</html>

@@ -1,0 +1,381 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Newsreader:opsz,wght@6..72,800&family=Poppins:wght@300;500;700;900&family=Quicksand&family=Sofia&family=Ubuntu&family=Wix+Madefor+Text:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap');
+
+/* Variable */
+:root {
+  --bg-gradient: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+* {
+  box-sizing: border-box;
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  color: white;
+  background: black;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.head{
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 5%;
+    letter-spacing: 3px;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    box-shadow: 2px 2px 20px silver;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px){
+    .head{
+        flex-direction: column;
+        align-items: center;
+        gap:20px;
+    }
+    
+}
+
+div[class ^= "sec"]{
+    width:100vw;
+    height: 100vh;
+    border:2px solid white;
+    border-left: none;
+    border-right: none;
+    background: url('https://images.unsplash.com/photo-1502239608882-93b729c6af43?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+/* .sec1 {
+    background: radial-gradient(circle at center, #16222A, #3A6073);
+}
+
+.sec2 {
+    background: radial-gradient(circle at center, #16222A, #1f3a47);
+}
+
+.sec3 {
+    background: radial-gradient(circle at top right, #3A6073, #16222A);
+}
+
+.sec4 {
+    background: radial-gradient(circle at center, #16222A, #1f3a47);
+}
+
+.sec5 {
+    background: radial-gradient(circle at top right, #3A6073, #16222A);
+}
+
+.sec6 {
+    background: radial-gradient(circle at center, #16222A, #1f3a47);
+
+}
+
+.sec7 {
+    background: radial-gradient(circle at top right, #3A6073, #16222A);
+
+}
+
+.sec8 {
+    background: radial-gradient(circle at center, #16222A, #1f3a47);
+
+}
+
+.sec9 {
+    background: radial-gradient(circle at top right, #3A6073, #16222A);
+
+}
+
+.sec10 {
+    background: radial-gradient(circle at center, #16222A, #1f3a47);
+
+} */
+
+
+
+.sec1 .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(img1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec2 .back{
+    background: url(img2.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec3 .back{
+    background: url(img3.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec4 .back{
+    background: url(img4.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec5 .back{
+    background: url(img5.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec6 .back{
+    background: url(img6.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec7 .back{
+    background: url(img7.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec8 .back{
+    background: url(img8.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec9 .back{
+    background: url(img9.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+.sec10 .back{
+    background: url(img10.png);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 9999;
+}
+
+/* .back{
+    display: none;
+} */
+
+.work{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 0% 5%;
+}
+
+.work > *{
+    margin-bottom: 30px;
+}
+
+h2{
+    font-size: clamp(1rem, 0.5rem + 1.25vw, 2rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-transform: uppercase;
+}
+
+p{
+    font-family: 'Varela', sans-serif;
+    font-size: clamp(0.75rem, 0.5rem + 1.25vw, 1.5rem);
+    line-height: 150%;
+    color: white;
+    text-indent: 1.3cm;
+    white-space: justify;
+    text-align: justify;
+}
+
+.matrix{
+    font-size: 0.75rem;
+    text-align: center;
+}
+
+.dark{
+    color: darkviolet;
+}
+
+
+li{
+    font-family: 'Varela', sans-serif;
+    font-size: clamp(0.75rem, 0.5rem + 1.25vw, 1.25rem);
+    line-height: 150%;
+    color: white;
+    text-indent: 1.3cm;
+    white-space: justify;
+    text-align: justify;
+}
+
+ul{
+    margin-left: 2cm;
+    list-style-position: inside;
+}
+
+
+pre.code {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: clamp(0.75rem, 0.5rem + 1.25vw, 1.25rem);
+    line-height: 170%;
+    font-weight: 500;
+    background: black;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 5px;
+    max-height: 40vh;
+    overflow: scroll;
+    outline: 4px solid rgba(255, 0, 0, 0.362);
+    margin: 20px 0;
+}
+
+.plot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    margin: 20px 0;
+    height: fit-content;
+    width: 100%;
+    position: relative;
+}
+
+.plot_side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+    height: fit-content;
+    width: 100%;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.plot_side table {
+    flex-basis: 40%;
+}
+
+.plot_side img {
+    width: 25%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.plot img,
+.plot video {
+    width: 75%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #333; /* Dark background color */
+    color: #fff; /* Light text color */
+}
+
+th,
+td {
+    border: 1px solid #555; /* Dark border color */
+    padding: 15px;
+}
+
+th:first-child {
+    text-transform: uppercase; /* All caps for the first column */
+}
+
+tr:nth-child(even) {
+    background-color: #444; /* Slightly lighter background color for even rows */
+}
+
+.work > *{
+    opacity: 0;
+    translate: -200px -250px;
+}
+
+video{
+    height: 80%;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.work iframe{
+    height: 80%;
+    width: 100%;
+}

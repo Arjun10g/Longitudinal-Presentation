@@ -1,0 +1,13 @@
+name: Longitudinal_Presentation
+title: Longitudinal_Presentation
+username: arjun10
+account: arjun10
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 11068869
+bundleId: 8196992
+url: https://arjun10.shinyapps.io/Longitudinal_Presentation/
+version: 1
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: anim_f.mp4|anim1.gif|anim2.gif|anim3.gif|img1.png|img10.png|img2.png|img3.png|img4.png|img5.png|img6.png|img7.png|img8.png|img9.png|index.css|index.html|index.js|vid.mp4
